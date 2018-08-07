@@ -6,7 +6,11 @@ This project is created for who has storybook list and want to find videos for i
 There can be multiple read-along videos for a book and it is desirable to find a video of good quality.
 Preferred channel list should be prepared first by searching youtube for some books.
 
-## Software Requirements
+## Software requirements
+* search videos of preferred channel
+* match book and videos by compareing book titles and video titles
+
+## How to use
 * input a text file where preferred channel's id are listed
   * channel id is the last part of a channel's home url
   * For example, UCpIFBuCpJRJeYTrB2sGGGqw is the id of the channel named Animated Children's Book whose home url is  https://www.youtube.com/channel/UCpIFBuCpJRJeYTrB2sGGGqw
