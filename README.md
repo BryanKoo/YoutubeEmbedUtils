@@ -9,11 +9,11 @@ Preferred channel list should be prepared first by searching youtube for some bo
 ## Software requirements
 * search videos of preferred channels
   * Google provides API for searching videos of a channel.
-  * https://developers.google.com/youtube/v3/docs/search/list?hl=ko
+    * https://developers.google.com/youtube/v3/docs/search/list?hl=ko
   * developer key is needed to use the API
 * match book and videos by comparing book titles and video titles
-  * both titles may have writer name in it.
-  * video titles may have additional marketing words.
+  * both titles can have writer name in it.
+  * video titles can have additional marketing words.
     * A Read Aloud of "Fresh Fall Leaves" by Shari Halpern WITH SOUND ETTECTS - HD
 
 ## How to use
@@ -29,4 +29,4 @@ Preferred channel list should be prepared first by searching youtube for some bo
   * it is a tab separated value text file with ANSI windows default encoding.
     * the first column is series title, the second column is book title
   * videos_book.tsv will be created as the result of matching
-    * matching 
+    * channel name, channel id, bideo title, video url, video image url, book title, match percentage are listed in the file
