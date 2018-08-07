@@ -10,6 +10,7 @@ Preferred channel list should be prepared first by searching youtube for some bo
 * search videos of preferred channels
   * Google provides API for searching videos of a channel.
   * https://developers.google.com/youtube/v3/docs/search/list?hl=ko
+  * developer key is needed to use the API
 * match book and videos by comparing book titles and video titles
 
 ## How to use
