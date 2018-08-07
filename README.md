@@ -7,14 +7,15 @@ There can be multiple read-along videos for a book and it is desirable to find a
 Preferred channel list should be prepared first by searching youtube for some books.
 
 ## Software requirements
-* search videos of preferred channel
-* match book and videos by compareing book titles and video titles
+* search videos of preferred channels
+  * Google provides API for searching videos of a channel.
+  * https://developers.google.com/youtube/v3/docs/search/list?hl=ko
+* match book and videos by comparing book titles and video titles
 
 ## How to use
-* input a text file where preferred channel's id are listed
+* prepare a text file where preferred channel's name and id are listed
+  * channel name is not need for the search but need for easy recognition
   * channel id is the last part of a channel's home url
   * For example, UCpIFBuCpJRJeYTrB2sGGGqw is the id of the channel named Animated Children's Book whose home url is  https://www.youtube.com/channel/UCpIFBuCpJRJeYTrB2sGGGqw
-
-## Youtube Data API
-Google provides API for searching videos of a channel.
-https://developers.google.com/youtube/v3/docs/search/list?hl=ko
+* execute search_channel.py to get list of videos for each channel
+* execute match_title.py to get mapping of books and videos
