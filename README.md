@@ -17,10 +17,6 @@ Preferred channel list should be prepared first by searching youtube for some bo
     * A Read Aloud of "Fresh Fall Leaves" by Shari Halpern WITH SOUND ETTECTS - HD
 
 ## How to use
-* prepare a text file where preferred channel's name and id are listed
-  * channel name is not need for the search but need for easy recognition
-  * channel id is the last part of a channel's home url
-  * For example, UCpIFBuCpJRJeYTrB2sGGGqw is the id of the channel named Animated Children's Book whose home url is  https://www.youtube.com/channel/UCpIFBuCpJRJeYTrB2sGGGqw
 * execute search_channel.py to get list of videos for each channel
   * with 1 argument for channel list file
     * it is a tab separated value text file with ANSI windows default encoding. (it is also called CP949 for Korean character encoding.)
