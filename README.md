@@ -1,19 +1,27 @@
-# BookTube
-Find read-along video in youtube
+# YoutubeEmbedUtils
+Utilities for embedding youtube videos.
 
 It is very nice way of education for children to listen to storybook read-along.
 This project is created for who has storybook list and want to find videos for it.
 There can be multiple read-along videos for a book and it is desirable to find a video of good quality.
 Preferred channel list should be prepared first by searching youtube for some books.
 
-## Software requirements
+Is is also needed to check availability of each video to provide stable playback functionality.
+Check the article below to understand why it is needed.
+https://youtube-eng.googleblog.com/2011/12/understanding-playback-restrictions_28.html
+Developer key is needed to use the API.
+
+## Software requirements and solutions
+* check a video cab be playbok (available, embeddable, region allowed, syndicated)
+  * Youtube provides API for checking status of videos
+    * https://developers.google.com/youtube/v3/docs/videos/list
 * search videos of preferred channels
-  * Google provides API for searching videos of a channel.
-    * https://developers.google.com/youtube/v3/docs/search/list?hl=ko
-  * developer key is needed to use the API
+  * Youtube provides API for searching videos of a channel
+    * https://developers.google.com/youtube/v3/docs/search/list
 * match book and videos by comparing book titles and video titles
+  * title matching algorithm should consider many exceptions. 
   * both titles can have writer name in it.
-  * video titles can have additional marketing words.
+  * video titles can have additional marketing words as below.
     * A Read Aloud of "Fresh Fall Leaves" by Shari Halpern WITH SOUND ETTECTS - HD
 
 ## How to use
