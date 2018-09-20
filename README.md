@@ -1,12 +1,16 @@
 # YoutubeEmbedUtils
 Utilities for embedding youtube videos.
 
-It is very nice way of education for children to listen to storybook read-along.
-This project is created for who has storybook list and want to find videos for it.
-There can be multiple read-along videos for a book and it is desirable to find a video of good quality.
-Preferred channel list should be prepared first by searching youtube for some books.
+This project is created for who want to embed youtube videos in his/her service or app.
 
-Is is also needed to check availability of each video to provide stable playback functionality.
+There can be multiple videos for a topic and it is desirable to find a video of good quality.
+Because quality of video is similar within a channel, 
+quality videos can be searched with preferred channel list.  
+
+After getting list of videos, it is needed to set a relation between topics and videos.
+The relation can be determined by check how much portion of title words are the same for topic and video.
+
+Is is needed to check availability of each video to provide stable playback functionality.
 Check the article below to understand why it is needed.
 https://youtube-eng.googleblog.com/2011/12/understanding-playback-restrictions_28.html
 Developer key is needed to use the API.
