@@ -7,8 +7,8 @@ There can be multiple videos for a topic and it is desirable to find a video of 
 Because quality of video is similar within a channel, 
 quality videos can be searched with preferred channel list.  
 
-After getting list of videos, it is needed to set a relation between topics and videos.
-The relation can be determined by check how much portion of title words are the same for topic and video.
+After getting list of videos, it is needed to set a relation between contents and videos.
+The relation can be determined by check how much portion of title words are the same for each content and each video.
 
 Is is needed to check availability of each video to provide stable playback functionality.
 Check the article below to understand why it is needed.
@@ -29,6 +29,7 @@ Developer key is needed to use the API.
     * A Read Aloud of "Fresh Fall Leaves" by Shari Halpern WITH SOUND ETTECTS - HD
 
 ## How to use
+### Search channels for videos
 * execute search_channel.py to get list of videos for each channel
   * with 1 argument for channel list file
     * it is a tab separated value text file with ANSI windows default encoding. (it is also called CP949 for Korean character encoding.)
@@ -36,9 +37,11 @@ Developer key is needed to use the API.
   * videos.tsv will be as the result of searching 
     * it is also a tab separated value text file with ANSI encoding.
     * channel name, channel id, video title, video url, video image urls are listed in the file
-* execute match_title.py to get mapping between books and videos
-  * with 1 argument for book list file
+    
+### Set relation between contents and videos
+* execute match_title.py to get mapping between contents and videos
+  * with 1 argument for content list file
   * it is a tab separated value text file with ANSI windows default encoding.
     * the first column is series title, the second column is book title
   * videos_book.tsv will be created as the result of matching
-    * channel name, channel id, bideo title, video url, video image url, book title, match percentage are listed in the file
+    * channel name, channel id, video title, video url, video image url, content title, match percentage are listed in the file
