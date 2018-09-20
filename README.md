@@ -47,4 +47,6 @@ Developer key is needed to use the API.
   * videos_book.tsv will be created as the result of matching
     * channel name, channel id, video title, video url, video image url, content/book title, match percentage are listed in the file
     
-### Set relation between contents and videos
+### Check availability of youtube videos
+* execute check_video.py
+  * with no argument or 1 argument for video list file
