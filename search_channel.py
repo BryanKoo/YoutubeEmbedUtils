@@ -108,9 +108,6 @@ if __name__ == "__main__":
   if len(sys.argv) < 2:
     print "run with 1 arguments for a input channel list file that has channel names and urls"
     sys.exit()
-  elif not sys.argv[1].startswith("channel") and not sys.argv[1].startwith("./channel"):
-    print "input file should be located in ./channel/"
-    sys.exit()
   elif not sys.argv[1].endswith(".tsv") and not sys.argv[1].endswith(".csv") and not sys.argv[1].endswith(".txt"):
     print "input file should be tab separated text file and the extension should be tsv or csv or txt"
     sys.exit()
