@@ -50,8 +50,11 @@ def normalize_symbols(string):
   result = result.replace(u"\u201c", '"').replace(u"\u201d", '"')
   result = result.replace(u"\u2744", '*').replace(u"\u2764", '*')
   result = result.replace(u"\u26fa", '*')
+  result = result.replace(u"\u2605", '*')
+  result = result.replace(u"\u30fb", '-')
   result = result.replace(u"\ufe0f", '')
-  result = filter_alpha(result)
+  result = result.replace(u'\xa0', '')
+  #result = filter_alpha(result)
   return result
 
 def youtube_search(outfile, ch_name, ch_id):
@@ -88,14 +91,15 @@ def youtube_search(outfile, ch_name, ch_id):
         titles.append(normalize_symbols(search_result["snippet"]["title"]))
         ids.append(search_result["id"]["videoId"])
 
-  tsv = codecs.open(outfile, 'a', encoding='cp949')
+  #tsv = codecs.open(outfile, 'a', encoding='cp949')
+  tsv = codecs.open(outfile, 'a', encoding='utf-8')
   for i in range(len(titles)):
     if has_hanja(titles[i]):
       print "hanja title"
       continue
     try:
       tsv.write(ch_name + "\t" + ch_id + "\t" + titles[i] + "\t" + "https://www.youtube.com/watch?v=" + ids[i] + "\t" + \
-        "https://img.youtube.com/vi/" + ids[i] + "/0.jpg\n")
+        "https://img.youtube.com/vi/" + ids[i] + "/0.jpg\n")  # 0 is the original-sized image
     except:
       pdb.set_trace()
   tsv.close()
@@ -104,8 +108,8 @@ if __name__ == "__main__":
   if len(sys.argv) < 2:
     print "run with 1 arguments for a input channel list file that has channel names and urls"
     sys.exit()
-  elif not sys.argv[1].startswith("data") and not sys.argv[1].startwith("./data"):
-    print "input file should be located in ./data/"
+  elif not sys.argv[1].startswith("channel") and not sys.argv[1].startwith("./channel"):
+    print "input file should be located in ./channel/"
     sys.exit()
   elif not sys.argv[1].endswith(".tsv") and not sys.argv[1].endswith(".csv") and not sys.argv[1].endswith(".txt"):
     print "input file should be tab separated text file and the extension should be tsv or csv or txt"
@@ -152,7 +156,8 @@ if __name__ == "__main__":
   chf.close()
 
   outfile = sys.argv[1][:-4] + "_videos.tsv"
-  tsv = codecs.open(outfile, 'w', encoding='cp949')
+  #tsv = codecs.open(outfile, 'w', encoding='cp949')
+  tsv = codecs.open(outfile, 'w', encoding='utf-8')
   tsv.write("channel_name" + "\t" + "channel_id" + "\t" + "video_title" + "\t" + "video_url" + "\t" + "video_image" + "\n")
   tsv.close()
 
