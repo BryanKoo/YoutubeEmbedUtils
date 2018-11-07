@@ -31,12 +31,16 @@ Developer key is needed to use the API.
 
 ## How to use
 ### Search channels for videos
+* create /channel subdirectory where input file will be read and output file will be writed
+  * /channel/ch.tsv can an example of input file name
 * execute search_channel.py to get list of videos for each channel
   * with 1 argument for channel list file
-    * it is a tab separated value text file with ANSI windows default encoding. (it is also called CP949 for Korean character encoding.)
+    * it is a tab separated value text file with ANSI (windows default) encoding.
+    * ANSI encoding is also called CP949 for Korean character encoding.
     * the first column is serial number, the second column is channel name, the third or the forth column is channel id.
-  * videos.tsv will be as the result of searching 
-    * it is also a tab separated value text file with ANSI encoding.
+  * /channel/ch_videos.tsv will be as the result of searching (when input file was /channel/ch.tsv) 
+    * it is also a tab separated value text file with utf-8 encoding.
+    * utf-8 is the standard encoding of web resources nowadays and may be transcoded into ANSI manually.
     * channel name, channel id, video title, video url, video image urls are listed in the file
     
 ### Set relation between content/book and video by comparing titles
