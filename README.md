@@ -1,18 +1,22 @@
 # YoutubeEmbedUtils
 Utilities for embedding youtube videos.
 
-This project is created for who want to embed youtube videos in his/her service or app.
+This project is created for who wants to embed youtube videos in his/her service or app.
+When a service wants to provice youtube video related to some contents of the service, there can be multiple videos for each content. 
+Select a video with good quality among multiple videos is time consuming and difficult.
+To make this selection simple, it is better to know good channels because quality of videos is uniform within a channel,
+The first utility is for getting video list of channels. (titles and urls)
 
-There can be multiple videos for a content/book. So it is desirable to find a video of good quality.
-Because quality of video is similar within a channel, quality videos can be searched with preferred channel list.  
-
-After getting list of quality videos, it is needed to set a relation between contents and videos.
+After getting list of videos from channels, it is needed to set a relation between contents and videos.
 The relation can be determined by check how much portion of title words are the same for each content and each video.
+The second utility is for setting relation between titles of contents and videos.
 
-Then it is needed to check availability of each video to provide stable playback functionality.
+Though videos related to the contents of the service is found, they can be disappeared from Youtube by some reason.
+Any video is possible to be failed to play.
+The third utility is for checking availability of each video.
+It is done by checking 3 properties of a video: embeddable, regionRestriction, syndicated
 Check the article below to understand why it is needed.
 https://youtube-eng.googleblog.com/2011/12/understanding-playback-restrictions_28.html
-Developer key is needed to use the API.
 
 ## Software requirements and solutions
 * search videos of preferred channels
@@ -54,3 +58,4 @@ Developer key is needed to use the API.
 ### Check availability of youtube videos
 * execute check_video.py
   * with no argument or 1 argument for video list file
+    * File selection GUI will be presented when no argument is given
