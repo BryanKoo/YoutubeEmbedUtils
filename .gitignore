@@ -1,0 +1,8 @@
+*.key
+*.pyc
+*.sh
+*.log
+data/*
+channel/*
+searched/*
+resource/*
