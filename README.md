@@ -16,7 +16,9 @@ The second utility is for setting relation between titles of contents and videos
 
 Though videos related to the contents of the service is found, they can be disappeared from Youtube by some reason.
 Any video is possible to be failed to play.
+
 The third utility is for checking availability of each video.
+
 It is done by checking 3 properties of a video: embeddable, regionRestriction, syndicated
 Check the article below to understand why it is needed.
 https://youtube-eng.googleblog.com/2011/12/understanding-playback-restrictions_28.html
