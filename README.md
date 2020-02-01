@@ -2,10 +2,10 @@
 Utilities for embedding youtube videos.
 
 This project is created for who wants to embed youtube videos in his/her service or app.
-When a service need to provice youtube video related to some contents of the service, there can be multiple videos for each content. 
-Selecting a video with good quality among multiple videos is time consuming and difficult.
+When a service needs to provide a youtube video related to some contents of the service, it is needed to selec a video with goodl quality among multiple videos for each content and it is time consuming and difficult.
 To make this selection simple, it is better to know good channels because quality of videos is uniform within a channel.
-It is assumed that good channels are already determined before using this utilities and good channels can be found by searching youtube and watching videos and then checking videos of channels that is found in searched results.
+Good channels can be found by searching youtube and watching videos and then checking videos of channels that is found in searched results.
+It is assumed that good channels are already determined manually before using this utilities.
 
 The first utility is for getting video list of channels. (titles and urls)
 
