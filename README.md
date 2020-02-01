@@ -43,8 +43,7 @@ https://youtube-eng.googleblog.com/2011/12/understanding-playback-restrictions_2
 ### Search channels for videos
 * create /channel subdirectory where input file will be read and output file will be writed
   * /channel/ch.tsv can be an example of input file name
-* execute search_channel.py to get list of videos for each channel if developer key is available
-* execute scrape_channel.py to get list of videos for each channel if developer key is not available
+* execute search_channel.py to get list of videos for each channel if developer key is available, execute scrape_channel.py to get list of videos for each channel if developer key is not available
   * with 1 argument for channel list file
     * it is a tab separated value text file with ANSI (windows default) encoding.
     * ANSI encoding is also called CP949 for Korean character encoding.
