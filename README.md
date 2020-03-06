@@ -2,10 +2,10 @@
 Utilities for embedding youtube videos.
 
 This project is created for who wants to embed youtube videos in his/her service or app.
-When a service need to provice youtube video related to some contents of the service, there can be multiple videos for each content. 
-Selecting a video with good quality among multiple videos is time consuming and difficult.
+When a service needs to provide a youtube video related to some contents of the service, it is needed to selec a video with goodl quality among multiple videos for each content and it is time consuming and difficult.
 To make this selection simple, it is better to know good channels because quality of videos is uniform within a channel.
-It is assumed that good channels are already determined before using this utilities and good channels can be found by searching youtube and watching videos and then checking videos of channels that is found in searched results.
+Good channels can be found by searching youtube and watching videos and then checking videos of channels that is found in searched results.
+It is assumed that good channels are already determined manually before using this utilities.
 
 The first utility is for getting video list of channels. (titles and urls)
 
@@ -28,6 +28,7 @@ https://youtube-eng.googleblog.com/2011/12/understanding-playback-restrictions_2
   * Youtube provides API for searching videos of a channel
     * https://developers.google.com/youtube/v3/docs/search/list
     * Developer key is needed to use the API
+  * If it is hard to gt a developer key then use scrape_channel.py
 * match content and videos by comparing content/book titles and video titles
   * title matching algorithm should consider many exceptions. 
   * both titles can have writer/publisher name in it.
@@ -41,8 +42,8 @@ https://youtube-eng.googleblog.com/2011/12/understanding-playback-restrictions_2
 ## How to use
 ### Search channels for videos
 * create /channel subdirectory where input file will be read and output file will be writed
-  * /channel/ch.tsv can an example of input file name
-* execute search_channel.py to get list of videos for each channel
+  * /channel/ch.tsv can be an example of input file name
+* execute search_channel.py to get list of videos for each channel if developer key is available, execute scrape_channel.py to get list of videos for each channel if developer key is not available
   * with 1 argument for channel list file
     * it is a tab separated value text file with ANSI (windows default) encoding.
     * ANSI encoding is also called CP949 for Korean character encoding.
@@ -50,7 +51,8 @@ https://youtube-eng.googleblog.com/2011/12/understanding-playback-restrictions_2
   * /channel/ch_videos.tsv will be as the result of searching (when input file was /channel/ch.tsv) 
     * it is also a tab separated value text file with utf-8 encoding.
     * utf-8 is the standard encoding of web resources nowadays and may be transcoded into ANSI manually.
-    * channel name, channel id, video title, video url, video image urls are listed in the file
+    * channel name, channel id, video title, video url, video image url are listed in the file for search_channel.py
+    * channel name, channel id, video title, video url, video length are listed in the file for scrape_channel.py
     
 ### Set relation between content/book and video by comparing titles
 * execute match_title.py to get mapping between contents and videos
