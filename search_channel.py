@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
-# find video urls of given channels
-# find screenshot urls as well
+# find video urls and title of given channels from youtube
+# find screenshot urls as well when using api
+# find length when scraping
 import codecs, chardet
 import os
 import sys

@@ -6,6 +6,8 @@ import codecs, chardet
 import os
 import sys
 import pdb
+import numpy as np
+import pandas as pd
 from scrape_videos import scrape_videos_channel
 
 def is_hanja(ch):
@@ -19,41 +21,25 @@ def has_hanja(text):
       return True
   return False
 
-def filter_alpha(string):
-  for ch in string:
-    if ch > '~':
-      string = string.replace(ch, " ")
-      string = string.replace("  ", " ")
-  return string
-
-def normalize_symbols(string):
-  result = string.replace(u"\u2018", "'").replace(u"\u2019", "'")
-  result = result.replace(u"\u2013", "-").replace(u"\u2014", "-")
-  result = result.replace(u"\u201c", '"').replace(u"\u201d", '"')
-  result = result.replace(u"\u2744", '*').replace(u"\u2764", '*')
-  result = result.replace(u"\u26fa", '*')
-  result = result.replace(u"\u2605", '*')
-  result = result.replace(u"\u30fb", '-')
-  result = result.replace(u"\ufe0f", '')
-  result = result.replace(u'\xa0', '')
-  #result = filter_alpha(result)
-  return result
-
-# found duplication of video >> dedup with video id
-def youtube_search(outfile, ch_name, ch_id, ch_url):
+def search_channel_videos(outfile, ch_name, ch_id, ch_url):
 
   urls, titles, lengths = scrape_videos_channel(ch_url)
+  df_data = {"titles": titles, "urls": urls, "lengths": lengths}
+  df = pd.DataFrame(df_data, columns=["channel", "ch_id", "titles","urls", "lengths"])
+
   print("\t found", len(urls))
   tsv = codecs.open(outfile, 'a', encoding='utf-8')
   for i in range(len(titles)):
     if has_hanja(titles[i]):
-      print("hanja title")
+      print("hanja title", titles[i], url[i])
       continue
     try:
       tsv.write(ch_name + "\t" + ch_id + "\t" + titles[i] + "\t" + urls[i] + "\t" + lengths[i] + "\n")
     except:
       pdb.set_trace()
   tsv.close()
+
+  return df
 
 def read_channel_list(chfile):
   ch_names = []
@@ -101,6 +87,7 @@ def read_channel_list(chfile):
   chf.close()
   return ch_names, ch_urls
 
+
 if __name__ == "__main__":
   if len(sys.argv) < 2:
     print("run with 1 arguments for a input channel list file that has channel names and urls")
@@ -123,6 +110,6 @@ if __name__ == "__main__":
     else:
       ch_id = tokens[-1].strip()
     print("search", i, len(ch_names), ch_names[i])
-    youtube_search(outfile, ch_names[i], ch_id, ch_url)
+    search_channel_videos(outfile, ch_names[i], ch_id, ch_url)
 
   print(outfile, "created")
